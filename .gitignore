@@ -2,3 +2,5 @@ Include/
 Lib/
 Scripts/
 pyvenv.cfg
+user_registration_api/*.txt
+user_registration_api/user/__pycache__/
