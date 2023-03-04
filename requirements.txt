@@ -1,0 +1,16 @@
+asgiref==3.6.0
+charset-normalizer==3.0.1
+Django==4.1.7
+django-cors-headers==3.14.0
+djangorestframework==3.14.0
+greenlet==2.0.2
+idna==3.4
+pycparser==2.21
+PySocks==1.7.1
+pytz==2022.7.1
+six==1.16.0
+sqlparse==0.4.3
+tzdata==2022.7
+urllib3==1.26.14
+zope.event==4.6
+zope.interface==5.5.2

@@ -1,0 +1,61 @@
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from rest_framework import status
+from .models import CustomUser
+from .serializers import CustomUserSerializer
+from django.db.utils import IntegrityError
+from datetime import datetime
+
+@csrf_exempt
+def users_data(request):
+    """
+    Fetch all user's data
+    """
+
+    if request.method == "GET":
+        users = CustomUser.objects.all()
+        user_serializer = CustomUserSerializer(users, many=True)
+        return JsonResponse(user_serializer.data, safe=False)
+
+    elif request.method == "POST":
+        data = JSONParser().parse(request)
+        user_data = CustomUserSerializer(data=data)
+
+        if user_data.is_valid():
+            try:
+                 user_data.save()
+            except IntegrityError:
+                return JsonResponse({'Error':'Provided Email Already Registered.Please try another email Id.'},status=status.HTTP_406_NOT_ACCEPTABLE)
+            else:
+                 return JsonResponse(user_data.data, status=status.HTTP_201_CREATED)
+            
+        return JsonResponse(user_data.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@csrf_exempt
+def user_details(request, email):
+    """
+    Retrieve, update or delete a code snippet.
+    """
+    try:
+        user = CustomUser.objects.get(email=email)
+    except CustomUser.DoesNotExist:
+        return JsonResponse({'Response':'User Not Found'},status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = CustomUserSerializer(user)
+        return JsonResponse(serializer.data)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        user.modified_date = datetime.now()
+        serializer = CustomUserSerializer(user, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=400)
+
+    elif request.method == 'DELETE':
+        user.delete()
+        return JsonResponse({'Response':'Successfully Deleted Requested Resource.'},status=status.HTTP_200_OK)
