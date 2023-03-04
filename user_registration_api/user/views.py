@@ -54,10 +54,6 @@ def register_user(request):
             
         return JsonResponse(user_data.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def calculate_bmi(height,weight):
-        if height > 0 and weight > 0:
-            calculate_bmi = weight / (height/100)**2
-
 def current_status(email):
     try:
         current_user = CustomUser.objects.get(email=email)
