@@ -26,7 +26,7 @@ def send_email(email,link):
           subject="Confirm Email",
           message=f"Please click on below link to confirm your account\n{link}",
           from_email="priks9998@gmail.com",
-          recipient_list=['joshipratik8999@gmail.com',],
+          recipient_list=['joshipratik8999@gmail.com',]
           fail_silently=False
      )
      
