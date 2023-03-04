@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'userdb',        
         'USER':'pratik',
-        'PASSWORD':'pratik@123',   # This can be optimized by providng the password by more secured way.
+        'PASSWORD':'pratik@123',   # This can be optimized by providng the password by more secured
         'HOST':'localhost',
         'PORT': 5432        
     }
@@ -140,7 +140,7 @@ STATIC_URL = 'static/'
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "priks9998@gmail.com"
-EMAIL_HOST_PASSWORD = "******"
+EMAIL_HOST_PASSWORD = "rclpkpbsnvvqxlss"
 EMAIL_USE_TLS = True
 
 

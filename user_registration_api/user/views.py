@@ -29,7 +29,6 @@ def send_email(email,link):
           recipient_list=['joshipratik8999@gmail.com',],
           fail_silently=False
      )
-
      
 
 @csrf_exempt
@@ -53,10 +52,6 @@ def register_user(request):
                  return JsonResponse(user_data.data, status=status.HTTP_201_CREATED)
             
         return JsonResponse(user_data.errors, status=status.HTTP_400_BAD_REQUEST)
-
-def calculate_bmi(height,weight):
-        if height > 0 and weight > 0:
-            calculate_bmi = weight / (height/100)**2
 
 def current_status(email):
     try:
@@ -146,8 +141,6 @@ def user_details(request, email):
     
         user.delete()
         return JsonResponse({'Response':'Successfully Deleted Requested Resource.'}, status=status.HTTP_200_OK)
-
-
 
 def reset_password(request):
     if not request.method=="POST":
