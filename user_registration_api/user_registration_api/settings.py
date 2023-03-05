@@ -36,10 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',  
+    'django.contrib.staticfiles',
+    'corsheaders',                 # 'corsheaders' for accepting Cross origin requests. e.g FrontEnd origin.  
     'rest_framework',
     'user',
-    'corsheaders',                 # 'corsheaders' for accepting Cross origin requests. e.g FrontEnd origin.
+    
     
     
     
@@ -136,6 +137,14 @@ STATIC_URL = 'static/'
 
 # Cross Origin Requests Configurtions - configured below.
 
+# App Name : 'corsheaders' 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:3000",
+]
+
+# Email Server Configured Below
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
