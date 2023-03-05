@@ -41,7 +41,6 @@ Decription: All User API Endpoints are mentioned below.
                     "weight_kg": 61.0,
                     "calculated_BMI":0.0
                 }
-   ↑ Above mentioned JSON Object
 
 
 2. Confirm Email Address at : http://localhost:8000/user/confirm/<Registered-email-Address>/
