@@ -14,7 +14,7 @@ class CustomUserSerializer(ModelSerializer):
 
         read_only_fields = ('userId','is_verified','is_active','last_login','registered_date','modified_date', 'session_token')
         
-        extra_kwargs = {'password' : {'write_only':True} }
+        extra_kwargs = {'password' : {'write_only':True}}
         
         fields = '__all__'
 

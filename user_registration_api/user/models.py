@@ -38,6 +38,22 @@ class CustomUser(models.Model):
     
     def caculate_BMI(self):
         self.calculated_BMI = self.weight / (self.height/100)**2
+
+    # Implemented for easy BMI Analysis Report Generation.
+    def BMI_Analyser(self,BMI):
+        if BMI <= 18.4:
+            return  "You are underweight.\nAdvice: Gain Some More Weight Buddy. Eat Healthy food minimum 4 times a day."
+        elif BMI <= 24.9:
+            return  "You are absolutely healthy, so Keep Going :)"
+        elif BMI <= 29.9:
+            return  "You are over weight.\nAdvice: Please daily do some exercise you'll be fine after few days."
+        elif BMI <= 34.9:
+            return  "You are severely over weight. \nAdvice: Please daily do some exercise you'll be fine after few days."
+        elif BMI <= 39.9:
+            return  "You are obese.\nAdvice: Please Strictly do some exercises likes running,cycling,walking for some weeks. You'll get better results."
+        else:
+            return  "You are severely obese.\n Advice: Please immediately Consult a dietitian and Gym Trainer as you've reached the risk BMI levels. If you follow their guidelines you'll be reach back to healthy bmi ratio."
+
     
     
     

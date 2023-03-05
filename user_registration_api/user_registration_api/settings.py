@@ -39,11 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',                 # 'corsheaders' for accepting Cross origin requests. e.g FrontEnd origin.  
     'rest_framework',
-    'user',
-    
-    
-    
-    
+    'user',  
 ]
 
 MIDDLEWARE = [
@@ -144,12 +140,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-# Email Server Configured Below
+# SMTP Email Server Configured Below.  'Sensitive Credentials are not displayed here'
 
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = "587"
-EMAIL_HOST_USER = "priks9998@gmail.com"
-EMAIL_HOST_PASSWORD = "rclpkpbsnvvqxlss"
+EMAIL_HOST = "smtp.mail.com"
+EMAIL_PORT = "101"
+EMAIL_HOST_USER = "************"
+EMAIL_HOST_PASSWORD = "*************"
 EMAIL_USE_TLS = True
 
 
