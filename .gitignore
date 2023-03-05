@@ -6,3 +6,5 @@ user_registration_api/*.txt
 user_registration_api/__pycache__/
 user/migrations/__pycache__/
 user/__pycache__/
+frontend/node_modules/
+frontend/user-registration-site/node_modules

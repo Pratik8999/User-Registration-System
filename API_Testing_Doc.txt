@@ -26,7 +26,7 @@ Decription: All User API Endpoints are mentioned below.
     }
 
 
-1. User Registration Endpoints : http://127.0.0.1:8000/user/register/
+1. User Registration Endpoints : http://localhost:8000/user/register/
    
    Method : POST
    Headers → Content-Type : application/json
@@ -62,7 +62,7 @@ Decription: All User API Endpoints are mentioned below.
                 }
 
 
-4. User Login Endpoint : http://127.0.0.1:8000/user/login/
+4. User Login Endpoint : http://localhost:8000/user/login/
 
    Method : POST
    Headers → Content-Type : application/json
@@ -73,16 +73,16 @@ Decription: All User API Endpoints are mentioned below.
                 }
 
 
-5. Get User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+5. Get User Details : http://localhost:8000/user/<Registered-email-Address>/
    
    *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
 
     Method : GET
 
-    E.g: http://127.0.0.1:8000/user/joshipratik8999@gmail.com/
+    E.g: http://localhost:8000/user/joshipratik8999@gmail.com/
 
 
-6. Update User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+6. Update User Details : http://localhost:8000/user/<Registered-email-Address>/
 
 
     *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
@@ -101,7 +101,7 @@ Decription: All User API Endpoints are mentioned below.
                     "calculated_BMI":<Updated-Data>
                 }
 
-7. User Logout Endpoint : http://127.0.0.1:8000/user/logout/
+7. User Logout Endpoint : http://localhost:8000/user/logout/
     
    *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
   
@@ -113,12 +113,12 @@ Decription: All User API Endpoints are mentioned below.
                 }
 
 
-8. Delete User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+8. Delete User Details : http://localhost:8000/user/<Registered-email-Address>/
 
     *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
 
     Method : DELETE
 
-    E.g: http://127.0.0.1:8000/user/joshipratik8999@gmail.com/
+    E.g: http://localhost:8000/user/joshipratik8999@gmail.com/
 
 
