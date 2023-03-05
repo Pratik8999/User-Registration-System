@@ -15,9 +15,9 @@ class CustomUser(models.Model):
    
     age = models.IntegerField()
    
-    height = models.FloatField()
+    height_cm = models.FloatField()
    
-    weight = models.FloatField()
+    weight_kg = models.FloatField()
 
     calculated_BMI = models.FloatField(default=0.0)
    
@@ -35,6 +35,9 @@ class CustomUser(models.Model):
 
     def __str__(self):
         return  self.full_name
+    
+    def caculate_BMI(self):
+        self.calculated_BMI = self.weight / (self.height/100)**2
     
     
     

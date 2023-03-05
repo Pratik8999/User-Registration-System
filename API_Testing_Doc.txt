@@ -1,0 +1,125 @@
+ Author: Pratik Joshi
+ Created Date: 04 Mar 2023 10:08:18 AM
+--------------------------------
+
+API : User Registration & Login Authentication System.
+Architecture : REST
+
+Decription: All User API Endpoints are mentioned below.
+            
+        * Note: " Each API Endpoint is mentioned as per the 
+                   Application flow "
+            
+
+• API Endpoints :
+
+• Sample JSON Object for Create,Update Requests with valid Parameters is mentioned below:
+    {        
+        "full_name": "Pratik Joshi",
+        "email": "joshipratik8999@gmail.com",
+        "password":"pratik@123",
+        "gender": "Male",
+        "age": 24,
+        "height_cm": 163,
+        "weight_kg": 61.0,
+        "calculated_BMI":0.0
+    }
+
+
+1. User Registration Endpoints : http://127.0.0.1:8000/user/register/
+   
+   Method : POST
+   Headers → Content-Type : application/json
+   Body → type : raw  
+   Body_Data →  {        
+                    "full_name": "Pratik Joshi",
+                    "email": "joshipratik8999@gmail.com",
+                    "password":"pratik@123",
+                    "gender": "Male",
+                    "age": 24,
+                    "height_cm": 163,
+                    "weight_kg": 61.0,
+                    "calculated_BMI":0.0
+                }
+   ↑ Above mentioned JSON Object
+
+
+2. Confirm Email Address at : http://localhost:8000/user/confirm/<Registered-email-Address>/
+
+   Method: GET
+   
+   E.g: http://localhost:8000/user/confirm/joshipratik8999@gmail.com/
+
+
+
+3. Forgot Password Endpoint at: http://localhost:8000/user/reset/
+   
+   Method : POST
+   Headers → Content-Type : application/json
+   Body → type : form-data 
+   Body_Data →  { 
+                    "email": "joshipratik8999@gmail.com"
+                    "password":"my_new_password@567"
+                }
+
+
+4. User Login Endpoint : http://127.0.0.1:8000/user/login/
+
+   Method : POST
+   Headers → Content-Type : application/json
+   Body → type : form-data 
+   Body_Data →  { 
+                    "email": "joshipratik8999@gmail.com"
+                    "password":"pratik@123"
+                }
+
+
+5. Get User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+   
+   *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
+
+    Method : GET
+
+    E.g: http://127.0.0.1:8000/user/joshipratik8999@gmail.com/
+
+
+6. Update User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+
+
+    *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
+
+    Method : PUT
+    Headers → Content-Type : application/json
+    Body → type : raw  
+    Body_Data →  {        
+                    "full_name": "<Update-Data>",
+                    "email": "<Updated-Data>",
+                    "password":"<Update-Data>",
+                    "gender": "<Updated-Data>",
+                    "age": <Updated-Data>,
+                    "height_cm": <Updated-Data>,
+                    "weight_kg": <Updated-Data>,
+                    "calculated_BMI":<Updated-Data>
+                }
+
+7. User Logout Endpoint : http://127.0.0.1:8000/user/logout/
+    
+   *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
+  
+   Method : POST
+   Headers → Content-Type : application/json
+   Body → type : form-data 
+   Body_Data →  { 
+                    "email": "joshipratik8999@gmail.com"
+                }
+
+
+8. Delete User Details : http://127.0.0.1:8000/user/<Registered-email-Address>/
+
+    *Condition for a Valid API Response:  Only After a verified Email & an Active Login Session.
+
+    Method : DELETE
+
+    E.g: http://127.0.0.1:8000/user/joshipratik8999@gmail.com/
+
+

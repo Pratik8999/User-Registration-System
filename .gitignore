@@ -3,4 +3,6 @@ Lib/
 Scripts/
 pyvenv.cfg
 user_registration_api/*.txt
-user_registration_api/user/__pycache__/
+user_registration_api/__pycache__/
+user/migrations/__pycache__/
+user/__pycache__/

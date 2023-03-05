@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user',
     'corsheaders',                 # 'corsheaders' for accepting Cross origin requests. e.g FrontEnd origin.
-    "secured_access"
+    
     
     
 ]

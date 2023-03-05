@@ -5,6 +5,7 @@ django-cors-headers==3.14.0
 djangorestframework==3.14.0
 greenlet==2.0.2
 idna==3.4
+psycopg2==2.9.5
 pycparser==2.21
 PySocks==1.7.1
 pytz==2022.7.1
